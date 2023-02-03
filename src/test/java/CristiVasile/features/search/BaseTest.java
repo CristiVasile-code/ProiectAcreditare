@@ -1,6 +1,6 @@
 package CristiVasile.features.search;
 
-import CristiVasile.steps.serenity.HomepageSteps;
+import CristiVasile.steps.serenity.*;
 import CristiVasile.utils.Constants;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
@@ -16,10 +16,19 @@ public class BaseTest {
     public WebDriver driver;
     @Steps
         protected HomepageSteps homepageSteps;
-    @Test
-    public void login(){
-        homepageSteps.clickOnLoginBtn();
-    }
+    @Steps
+    protected LoginSteps loginSteps;
+    @Steps
+    protected AccountSteps accountSteps;
+    @Steps
+    protected ProductSteps productSteps;
+    @Steps
+    protected SearchSteps searchSteps;
+    @Steps
+    protected CartSteps cartSteps;
+    @Steps
+    protected CheckoutSteps checkoutSteps;
+
     @Before
     public void initTest(){
         driver.manage().window().maximize();
