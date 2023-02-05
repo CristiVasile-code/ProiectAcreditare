@@ -21,6 +21,10 @@ public class ProductSteps extends BaseSteps{
         productPage.clickProductImg();
     }
     @Step
+    public void selectProdFromSearch(int index){
+        selectProduct(index);
+    }
+    @Step
     public void addProductToCart(int index, int quantity){
         selectProduct(index);
         if(isProductSimple()){
@@ -70,5 +74,30 @@ public class ProductSteps extends BaseSteps{
     @Step
     public boolean isProductSimple(){
         return productPage.isProductSimple();
+    }
+    @Step
+    public void isImgDisplayed(){
+
+        Assert.assertFalse("Imaginea nu e afisata !",prodImgContent());
+    }
+    @Step
+    public boolean prodImgContent(){
+        return productPage.prodImgCont().toLowerCase().contains("awaiting");
+    }
+    @Step
+    public void clickOnAdInfoBtn(){
+        productPage.clickAdditionalInfoBtn();
+    }
+    @Step
+    public void clickOnReviewsBtn(){
+        productPage.clickReviewsBtn();
+    }
+    @Step
+    public void isAdditionalTab(){
+        Assert.assertEquals("Additional information",productPage.getAdditTitle());
+    }
+    @Step
+    public void isReviewsTab(){
+        Assert.assertEquals("Reviews",productPage.getReviewsTitle());
     }
 }

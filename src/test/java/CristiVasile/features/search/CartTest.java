@@ -41,7 +41,6 @@ public class CartTest extends BaseTest{
         String text="shirt";
         homepageSteps.clickOnLoginLink();
         loginSteps.doLogin(Constants.REG_EMAIL, Constants.REG_PASS);
-        homepageSteps.clickOnShopLink();
         homepageSteps.typeIntoSearchBar(text);
         homepageSteps.clickOnSearchBtn();
         productSteps.addProductToCart(1,2);
@@ -50,7 +49,45 @@ public class CartTest extends BaseTest{
         cartSteps.clickOnUpdateCartBtn();
         cartSteps.isCartUpdated();
     }
+    @Test
+    public void addCoupon(){
+        String text="shirt";
+//        homepageSteps.clickOnLoginLink();
+//        loginSteps.doLogin(Constants.REG_EMAIL, Constants.REG_PASS);
+        homepageSteps.typeIntoSearchBar(text);
+        homepageSteps.clickOnSearchBtn();
+        productSteps.addProductToCart(1,2);
+        productSteps.goToCartFromProdPage();
+        cartSteps.addCoupon(Constants.COUP_FS);
+        cartSteps.wasCouponAdded();
+    }
+    @Test
+    public void addCouponTotals(){
+        String text="shirt";
+        homepageSteps.clickOnLoginLink();
+        loginSteps.doLogin(Constants.REG_EMAIL, Constants.REG_PASS);
+        homepageSteps.typeIntoSearchBar(text);
+        homepageSteps.clickOnSearchBtn();
+        productSteps.addProductToCart(2,2);
+        productSteps.goToCartFromProdPage();
+        cartSteps.addCoupon(Constants.COUP_FS);
+        cartSteps.wasCouponAddedTotals();
+    }
+    @Test
+    public void cartContentRemains(){
+        homepageSteps.clickOnLoginLink();
+        loginSteps.doLogin(Constants.REG_EMAIL, Constants.REG_PASS);
+        homepageSteps.clickOnCartLink();
+        String[] exList = cartSteps.getProductArray(cartSteps.getProductList());
+        homepageSteps.clickOnLogoutBtn();
+        homepageSteps.clickOnLoginLink();
+        loginSteps.doLogin(Constants.REG_EMAIL, Constants.REG_PASS);
+        homepageSteps.clickOnCartLink();
+        String[] axList = cartSteps.getProductArray(cartSteps.getProductList());
+        cartSteps.asses(exList,axList);
+    }
 }
 // TODO: btn de RETURN TO SHOP
 //TODO: verificari de costuri si totaluri
-//TODO: campul de quantity si butonul de UPDATE CART
+//TODO: dupa search dau add to cart direct din pagina de search, nu mai merg intai in pagina de produs si
+// apoi dau view cart direct si navighez la cart

@@ -9,7 +9,6 @@ public class ProductTest extends BaseTest{
         String text="shirt";
         homepageSteps.clickOnLoginLink();
         loginSteps.doLogin(Constants.REG_EMAIL, Constants.REG_PASS);
-        homepageSteps.clickOnShopLink();
         homepageSteps.typeIntoSearchBar(text);
         homepageSteps.clickOnSearchBtn();
         productSteps.addProductToCart(1,2);
@@ -41,4 +40,28 @@ public class ProductTest extends BaseTest{
         checkoutSteps.doCheckOut(Constants.BILL_FNAME, Constants.BILL_LNAME, Constants.BILL_ADDRESS, Constants.BILL_CITY, Constants.BILL_POSTCODE, Constants.BILL_PHONE, Constants.REG_EMAIL);
         checkoutSteps.wasOrderReceived();
     }
+    @Test
+    public void IsProductImageDisplayed(){
+        String text="fain";
+        homepageSteps.typeIntoSearchBar(text);
+        homepageSteps.clickOnSearchBtn();
+        productSteps.selectProduct(1);
+        productSteps.isImgDisplayed();
+    }
+    @Test
+    public void IsOnAdditionalInfoTab(){
+        String text="shirt";
+        homepageSteps.typeIntoSearchBar(text);
+        homepageSteps.clickOnSearchBtn();
+        productSteps.selectProduct(1);
+        productSteps.clickOnAdInfoBtn();
+        productSteps.isAdditionalTab();}
+    @Test
+    public void IsOnReviewsTab(){
+        String text="shirt";
+        homepageSteps.typeIntoSearchBar(text);
+        homepageSteps.clickOnSearchBtn();
+        productSteps.selectProduct(1);
+        productSteps.clickOnReviewsTab();
+        productSteps.isReviewsTab();}
 }

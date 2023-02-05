@@ -15,4 +15,5 @@ public class Constants {
     public static final String BILL_POSTCODE = "6200";
     public static final String BILL_EMAIL = REG_EMAIL;
     public static final String BILL_PHONE = "0724850087";
+    public static final String COUP_FS = "FS100";
 }

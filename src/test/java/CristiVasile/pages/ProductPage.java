@@ -31,6 +31,16 @@ public class ProductPage extends BasePage{
     @FindBy(css = ".woocommerce-product-details__short-description p")
     private WebElementFacade simpleProduct;
     // .woocommerce-product-details__short-description p - contine cuv simplu sau compus (cu contains)
+    @FindBy(css = ".img-wrap img")
+    private WebElementFacade prodImg;
+    @FindBy(id = "tab-title-additional_information")
+    private WebElementFacade adInfoBtn;
+    @FindBy(id="tab-title-reviews")
+    private WebElementFacade reviewsBtn;
+    @FindBy(css = "#tab-additional_information h2")
+    private WebElementFacade additTitle;
+    @FindBy(css = "#reviews h2")
+    private WebElementFacade reviewsTitle;
 
 
     public String getProductAddedMsg(){
@@ -80,5 +90,24 @@ public class ProductPage extends BasePage{
     }
     public boolean isProductSimple(){
         return simpleProduct.getText().contains("variable");
+    }
+    public boolean isProductImgDisplayed(){
+       return prodImg.isDisplayed();
+    }
+    public String prodImgCont(){
+        waitFor(prodImg);
+        return prodImg.getAttribute("alt");
+    }
+    public void clickAdditionalInfoBtn(){
+        clickOn(adInfoBtn);
+    }
+    public void clickReviewsBtn(){
+        clickOn(reviewsTab);
+    }
+    public String getAdditTitle(){
+        return additTitle.getText();
+    }
+    public String getReviewsTitle(){
+        return reviewsTitle.getText();
     }
 }

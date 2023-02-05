@@ -8,6 +8,10 @@ public class HomepageSteps extends BaseSteps{
         homePage.clickLoginLink();
     }
     @Step
+    public void clickOnLogoutBtn(){
+        homePage.clickLogoutBtn();
+    }
+    @Step
     public void clickOnShopLink(){
         homePage.clickShopLink();
     }

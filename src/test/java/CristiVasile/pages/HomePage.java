@@ -7,6 +7,8 @@ public class HomePage extends BasePage{
     //right-top navigation
     @FindBy(css = ".login-woocommerce a")
     private WebElementFacade loginLink;
+    @FindBy(css = ".logout")
+    private WebElementFacade logoutBtn;
     @FindBy(css = ".view-cart a")
     private WebElementFacade cartIconLink;
     @FindBy(css = ".search-field")
@@ -37,6 +39,9 @@ public class HomePage extends BasePage{
     public void typeInSearchBarAndEnter(String text){searchField.typeAndEnter(text);}
     public void clickSearchBtn(){
         clickOn(searchBtn);
+    }
+    public void clickLogoutBtn(){
+        clickOn(logoutBtn);
     }
     //left-top
     public void clickShopLink(){

@@ -22,6 +22,18 @@ public class CartPage extends BasePage{
     private List<WebElementFacade> listCartProductQty;
     @FindBy(css = "[name=\"update_cart\"]")
     private WebElementFacade updateCartBtn;
+    @FindBy(id="coupon_code")
+    private WebElementFacade couponField;
+    @FindBy(css = ".coupon .button")
+    private WebElementFacade couponBtn;
+    @FindBy(css = ".cart-discount th")
+    private WebElementFacade coupon;
+    @FindBy(css = ".cart-subtotal .amount")
+    private WebElementFacade orderSubtotal;
+    @FindBy(css = ".order-total .amount")
+    private WebElementFacade orderTotal;
+    @FindBy(css = "[data-title=\"Product\"]")
+    private List<WebElementFacade> listOfProducts;
 
 //    methods
     public void clickCheckoutBtn(){
@@ -55,6 +67,27 @@ public class CartPage extends BasePage{
         clickOn(updateCartBtn);
         waitABit(1000);
     }
-
+    public void setCouponField(String text){
+        waitFor(couponField);
+        typeInto(couponField, text);
+    }
+    public void clickCouponBtn(){
+        clickOn(couponBtn);
+    }
+    public String getCouponText(){
+        return coupon.getText();
+    }
+    public int getOrderSubtotal(){
+        waitFor(orderSubtotal);
+        return formatStringToInt(orderSubtotal.getText());
+    }
+    public int getOrderTotal(){
+        waitFor(orderTotal);
+        return formatStringToInt(orderTotal.getText());
+    }
+    public List<WebElementFacade> cartItems(){
+        waitFor(listOfProducts.get(0));
+        return listOfProducts;
+    }
 
 }
