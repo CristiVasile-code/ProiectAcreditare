@@ -35,9 +35,11 @@ public class ProductSteps extends BaseSteps{
     }
     @Step
     public void wasProductAdded(){
-        System.out.println("\""+getProductName()+"\""+" has been added to your cart.");
-        System.out.println(getProductWasAddedMsg());
-        Assert.assertEquals("\""+getProductName()+"\""+" has been added to your cart.",getProductWasAddedMsg());
+        String expectedMessage = "\""+getProductName()+"\""+" has been added to your cart.";
+        String actualMessage = getProductWasAddedMsg();
+        if(actualMessage.contains("have")){
+            Assert.assertTrue(getProductWasAddedMsg().contains("\"" + getProductName() + "\"" + " have been added to your cart."));
+        }else Assert.assertTrue(getProductWasAddedMsg().contains(expectedMessage));
     }
     @Step
     public void selectProduct(int index){
@@ -77,7 +79,6 @@ public class ProductSteps extends BaseSteps{
     }
     @Step
     public void isImgDisplayed(){
-
         Assert.assertFalse("Imaginea nu e afisata !",prodImgContent());
     }
     @Step

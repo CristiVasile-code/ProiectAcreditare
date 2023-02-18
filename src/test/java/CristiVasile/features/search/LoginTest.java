@@ -16,7 +16,6 @@ public class LoginTest extends BaseTest{
         loginSteps.typeIntoLoginPassField(Constants.REG_PASS);
         loginSteps.clickOnLoginBtn();
         loginSteps.isUserNameReqMsgDisplayed();
-        //TODO: un switch case cu mesajele de eroare
     }
     @Test
     public void loginWithMissingPass(){

@@ -52,8 +52,8 @@ public class CartTest extends BaseTest{
     @Test
     public void addCoupon(){
         String text="shirt";
-//        homepageSteps.clickOnLoginLink();
-//        loginSteps.doLogin(Constants.REG_EMAIL, Constants.REG_PASS);
+        homepageSteps.clickOnLoginLink();
+        loginSteps.doLogin(Constants.REG_EMAIL, Constants.REG_PASS);
         homepageSteps.typeIntoSearchBar(text);
         homepageSteps.clickOnSearchBtn();
         productSteps.addProductToCart(1,2);
@@ -74,7 +74,7 @@ public class CartTest extends BaseTest{
         cartSteps.wasCouponAddedTotals();
     }
     @Test
-    public void cartContentRemains(){
+    public void cartContentAfterLogout(){
         homepageSteps.clickOnLoginLink();
         loginSteps.doLogin(Constants.REG_EMAIL, Constants.REG_PASS);
         homepageSteps.clickOnCartLink();

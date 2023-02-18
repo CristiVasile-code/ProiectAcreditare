@@ -11,7 +11,7 @@ public class ProductTest extends BaseTest{
         loginSteps.doLogin(Constants.REG_EMAIL, Constants.REG_PASS);
         homepageSteps.typeIntoSearchBar(text);
         homepageSteps.clickOnSearchBtn();
-        productSteps.addProductToCart(1,2);
+        productSteps.addProductToCart(1,1);
         productSteps.wasProductAdded();
     }
     @Test

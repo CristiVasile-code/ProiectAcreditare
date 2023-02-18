@@ -10,6 +10,7 @@ public class ProductPage extends BasePage{
     private WebElementFacade addToCartBtn;
     @FindBy(css = ".woocommerce-message")
     private WebElementFacade productAddedMsg;
+
     @FindBy(css = ".entry-summary h1")
     private WebElementFacade productName;
     @FindBy(css = ".wc-products .inner-img")

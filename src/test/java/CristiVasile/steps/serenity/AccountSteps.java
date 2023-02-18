@@ -11,9 +11,7 @@ public class AccountSteps extends BaseSteps{
     }
     @Step
     public void isUserLoggedIn(){
-//        System.out.println(Constants.REG_EMAIL.replaceAll("@gmail.com",""));
-//        System.out.println(accountPage.getWelcomeMsgUser());
-        Assert.assertEquals("cristivasilecode",getWelcomeText());
+        Assert.assertEquals(Constants.USER_NAME,getWelcomeText());
     }
     @Step
     public void clickOnOrdersBtn(){

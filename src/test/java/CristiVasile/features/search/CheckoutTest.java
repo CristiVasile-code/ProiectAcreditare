@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class CheckoutTest extends BaseTest{
     @Test
-    public void isOrderExisting(){
+    public void orderExists(){
         String text="shirt";
         homepageSteps.clickOnLoginLink();
         loginSteps.doLogin(Constants.REG_EMAIL, Constants.REG_PASS);
@@ -20,4 +20,5 @@ public class CheckoutTest extends BaseTest{
         accountSteps.clickOnOrdersBtn();
         accountSteps.isOrder(number);
     }
+
 }
