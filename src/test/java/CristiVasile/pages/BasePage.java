@@ -3,7 +3,7 @@ package CristiVasile.pages;
 import net.serenitybdd.core.pages.PageObject;
 
 public class BasePage extends PageObject {
-    public int formatStringToInt(String text){
-        return Integer.parseInt(text.replaceAll("lei","").replaceAll(".00",""));
+    public float formatStringToInt(String text){
+        return Float.parseFloat(text.replaceAll("lei","").replaceAll(".00",""));
     }
 }

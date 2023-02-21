@@ -77,11 +77,11 @@ public class CartPage extends BasePage{
     public String getCouponText(){
         return coupon.getText();
     }
-    public int getOrderSubtotal(){
+    public float getOrderSubtotal(){
         waitFor(orderSubtotal);
         return formatStringToInt(orderSubtotal.getText());
     }
-    public int getOrderTotal(){
+    public float getOrderTotal(){
         waitFor(orderTotal);
         return formatStringToInt(orderTotal.getText());
     }

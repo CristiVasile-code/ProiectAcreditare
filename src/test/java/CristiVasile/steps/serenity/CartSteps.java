@@ -67,11 +67,11 @@ public class CartSteps extends BaseSteps{
         Assert.assertTrue("Coupon was not added.",hasCoupon());
     }
     @Step
-    public int getSubtotal(){
+    public float getSubtotal(){
         return cartPage.getOrderSubtotal();
     }
     @Step
-    public int getOrderTotal(){
+    public float getOrderTotal(){
         return cartPage.getOrderTotal();
     }
     @Step

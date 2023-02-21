@@ -23,6 +23,10 @@ public class HomePage extends BasePage{
     private WebElementFacade headerCartBtn;
     @FindBy(css = ".menu-item-70 a")
     private WebElementFacade headerMyAccountBtn;
+    @FindBy(css = "[data-product_id=\"26\"]")
+    private WebElementFacade addToCartBtnC;
+    @FindBy(css = ".wc-forward")
+    private WebElementFacade viewCartBtn;
 
 
     //methods
@@ -54,4 +58,10 @@ public class HomePage extends BasePage{
         waitFor(headerMyAccountBtn);
         clickOn(headerMyAccountBtn);
     }
+
+    //shop page
+    public void clickAddBtn(){clickOn(addToCartBtnC);}
+    public String getBtnText(){return addToCartBtnC.getText();}
+    public String getViewCartBtnCText(){return viewCartBtn.getText();}
+    public void clickViewCartBtn(){clickOn(viewCartBtn);}
 }
