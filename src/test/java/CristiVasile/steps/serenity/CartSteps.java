@@ -1,9 +1,7 @@
 package CristiVasile.steps.serenity;
-
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
-
 import java.util.List;
 
 public class CartSteps extends BaseSteps{
@@ -30,7 +28,6 @@ public class CartSteps extends BaseSteps{
     @Step
     public String wasCartUpdated(){
         return cartPage.getAlertMsg();
-
     }
     @Step
     public void isCartUpdated(){

@@ -79,7 +79,7 @@ public class ProductSteps extends BaseSteps{
     }
     @Step
     public void isImgDisplayed(){
-        Assert.assertFalse("Imaginea nu e afisata !",prodImgContent());
+        Assert.assertTrue("Imaginea nu e afisata !",prodImgContent());
     }
     @Step
     public boolean prodImgContent(){

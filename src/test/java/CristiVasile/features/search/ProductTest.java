@@ -41,7 +41,7 @@ public class ProductTest extends BaseTest{
         checkoutSteps.wasOrderReceived();
     }
     @Test
-    public void IsProductImageDisplayed(){
+    public void productImageNotDisplayed(){
         String text="fain";
         homepageSteps.typeIntoSearchBar(text);
         homepageSteps.clickOnSearchBtn();

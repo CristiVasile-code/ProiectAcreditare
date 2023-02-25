@@ -6,8 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class AccountPage extends BasePage{
-//    @FindBy(css = "woocommerce-MyAccount-content p")
-//    private WebElementFacade welcomeMsgHello;
     @FindBy(css = ".woocommerce-MyAccount-content strong:nth-child(1)")
     private WebElementFacade welcomeMsgUser;
     @FindBy(css = ".woocommerce-MyAccount-navigation-link--orders a")

@@ -57,7 +57,7 @@ public class ProductPage extends BasePage{
     }
     public void clickProductImg(){
         clickOn(productImg);
-    }//deprecated cred
+    }
     public void selectColor(int index){
         if(colorSelector.isDisplayed()){
         colorSelector.selectByIndex(index).click();}

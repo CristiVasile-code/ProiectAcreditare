@@ -1,5 +1,4 @@
 package CristiVasile.steps.serenity;
-
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
 

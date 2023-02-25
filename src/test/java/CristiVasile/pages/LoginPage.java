@@ -40,4 +40,3 @@ public class LoginPage extends BasePage{
         return errorMsg.getText();
     }
 }
-//TODO: un switch case cu mesajele de eroare

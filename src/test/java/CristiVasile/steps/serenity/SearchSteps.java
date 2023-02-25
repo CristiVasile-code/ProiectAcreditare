@@ -9,8 +9,6 @@ public class SearchSteps extends BaseSteps{
     waitABit(2000);}
     @Step
     public void wasSearchSuccesfull(String text){
-
         Assert.assertTrue("The product is not present",searchPage.verify(text));
     }
-
 }

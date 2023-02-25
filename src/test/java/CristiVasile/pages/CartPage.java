@@ -53,7 +53,7 @@ public class CartPage extends BasePage{
         return pageName.getText();
     }
     public String getAlertMsg(){
-        waitFor(alertMsg);
+        waitABit(2000);
         return alertMsg.getText();
     }
     public void setCartProductQty(String qty){

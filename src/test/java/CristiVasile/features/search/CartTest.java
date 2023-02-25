@@ -87,7 +87,4 @@ public class CartTest extends BaseTest{
         cartSteps.asses(exList,axList);
     }
 }
-// TODO: btn de RETURN TO SHOP
-//TODO: verificari de costuri si totaluri
-//TODO: dupa search dau add to cart direct din pagina de search, nu mai merg intai in pagina de produs si
-// apoi dau view cart direct si navighez la cart
+

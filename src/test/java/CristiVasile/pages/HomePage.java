@@ -28,7 +28,6 @@ public class HomePage extends BasePage{
     @FindBy(css = ".wc-forward")
     private WebElementFacade viewCartBtn;
 
-
     //methods
     // right-top
     public void clickLoginLink(){
